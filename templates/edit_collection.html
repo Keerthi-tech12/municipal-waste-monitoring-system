@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-warning text-dark">
+
+            <h3>
+                ✏️ Edit Collection Record
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Collection Date
+                        </label>
+
+                        {{ form.collection_date }}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Collection Time
+                        </label>
+
+                        {{ form.collection_time }}
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Ward
+                        </label>
+
+                        {{ form.ward }}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Vehicle
+                        </label>
+
+                        {{ form.vehicle }}
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Loaded Weight
+                        </label>
+
+                        {{ form.loaded_weight }}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Empty Weight
+                        </label>
+
+                        {{ form.empty_weight }}
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-warning">
+
+                    Update Collection
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mb-4">
+    Monthly Waste Report
+</h1>
+
+<table class="table table-bordered table-striped shadow">
+
+    <thead class="table-warning">
+        <tr>
+            <th>Month</th>
+            <th>Total Waste (kg)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for month in monthly_data %}
+
+        <tr>
+            <td>{{ month.month|date:"F Y" }}</td>
+            <td>{{ month.total_waste }}</td>
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

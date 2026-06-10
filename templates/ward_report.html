@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mb-4">
+    Ward Wise Waste Report
+</h1>
+
+<div class="mb-3">
+
+    <a href="/reports/ward/export-excel/"
+       class="btn btn-success">
+        Download Excel Report
+    </a>
+
+    <a href="/reports/ward/export-pdf/"
+       class="btn btn-danger">
+        Download PDF Report
+    </a>
+
+</div>
+
+<table class="table table-bordered table-striped shadow">
+
+    <thead class="table-primary">
+        <tr>
+            <th>Ward</th>
+            <th>Total Waste (kg)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for ward in ward_data %}
+
+        <tr>
+            <td>{{ ward.ward__ward_name }}</td>
+            <td>{{ ward.total_waste }}</td>
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

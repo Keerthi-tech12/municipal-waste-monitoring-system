@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mb-4">
+    Zone Wise Waste Report
+</h1>
+
+<table class="table table-bordered table-striped shadow">
+
+    <thead class="table-success">
+        <tr>
+            <th>Zone</th>
+            <th>Total Waste (kg)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for zone in zone_data %}
+
+        <tr>
+            <td>{{ zone.ward__zone__zone_name }}</td>
+            <td>{{ zone.total_waste }}</td>
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

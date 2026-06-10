@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+
+            <h3>
+                🌍 Add Zone
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            {% if success %}
+
+            <div class="alert alert-success">
+
+                Zone Added Successfully!
+
+            </div>
+
+            {% endif %}
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button
+                    type="submit"
+                    class="btn btn-success">
+
+                    Save Zone
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

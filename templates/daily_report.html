@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center mb-4">
+    Daily Waste Collection Report
+</h1>
+
+<table class="table table-bordered table-striped shadow">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Ward</th>
+            <th>Vehicle</th>
+            <th>Waste Quantity (kg)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for item in collections %}
+
+        <tr>
+            <td>{{ item.collection_date }}</td>
+            <td>{{ item.collection_time }}</td>
+            <td>{{ item.ward }}</td>
+            <td>{{ item.vehicle }}</td>
+            <td>{{ item.waste_quantity }}</td>
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}

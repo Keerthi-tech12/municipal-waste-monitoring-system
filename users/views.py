@@ -22,7 +22,11 @@ def login_view(request):
 
             login(request, user)
 
-            profile = UserProfile.objects.get(user=user)
+            profile = UserProfile.objects.filter(user=user).first()
+
+            if not profile:
+               error = "User profile not found"
+               return render(request, 'login.html', {'error': error})
 
             if profile.role == 'Commissioner':
                 return redirect('/')
